@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Friendship Day, Radhu 💙</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%92%99</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Fonts: Patrick Hand and Gaegu -->
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blush: #ffe1e8;
+    --lavender: #e8e0fa;
+    --sky: #dceffb;
+    --cream: #fffaf3;
+    --gold: #d9a66c;
+    --rose: #e8909f;
+    --ink: #5b4a63;
+    --ink-soft: #8d7c95;
+    --glass: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.8);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* Initial Site Fade-in Animation */
+  body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+    font-family: 'Patrick Hand', cursive;
+    color: var(--ink);
+    background: linear-gradient(160deg, var(--blush) 0%, var(--lavender) 48%, var(--sky) 100%);
+    animation: siteLoad 1.5s ease-out forwards;
+  }
+
+  @keyframes siteLoad {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* ---------- Gentle Floating ---------- */
+  @keyframes floatSoft {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+
+  @keyframes floatTiny {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+  }
+
+  /* ---------- Floating Petals Background ---------- */
+  #petals-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none; 
+    z-index: 0; 
+    overflow: hidden;
+  }
+
+  .petal {
+    position: absolute;
+    border-radius: 15px 0 15px 0; 
+    opacity: 0.45; 
+    filter: blur(1.5px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    animation: fall linear infinite, sway ease-in-out infinite alternate;
+  }
+
+  @keyframes fall {
+    0% { top: -10%; }
+    100% { top: 110%; }
+  }
+  @keyframes sway {
+    0% { transform: translateX(0) rotate(0deg); }
+    100% { transform: translateX(60px) rotate(90deg); }
+  }
+
+  /* ---------- Page Transitions Setup ---------- */
+  section {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 10; 
+
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  section.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  section.exit {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.05);
+    pointer-events: none;
+  }
+
+  /* ---------- Typography & Hero ---------- */
+  .hero-title {
+    font-family: 'Gaegu', cursive;
+    font-weight: 700;
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1.1;
+    text-shadow: 0 6px 28px rgba(200,150,180,0.25);
+    text-align: center;
+    margin-bottom: 10px;
+    animation: floatSoft 5.5s ease-in-out infinite;
+  }
+
+  .highlight {
+    background: linear-gradient(120deg, var(--gold), var(--rose));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero-sub {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    color: var(--ink-soft);
+    text-align: center;
+    margin-bottom: 40px;
+    animation: floatTiny 6s ease-in-out infinite;
+    animation-delay: 0.25s;
+  }
+
+  /* ---------- Glassmorphic Cards ---------- */
+  .glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 40px 30px;
+    max-width: 550px;
+    width: 95%;
+    box-shadow: 0 20px 50px rgba(150, 120, 170, 0.12);
+    text-align: center;
+    animation: floatSoft 6.5s ease-in-out infinite;
+  }
+
+  .kicker {
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    animation: floatTiny 5.8s ease-in-out infinite;
+  }
+
+  .glass-card p.content {
+    font-family: 'Gaegu', cursive;
+    font-size: clamp(1.5rem, 3.5vw, 1.8rem);
+    line-height: 1.6;
+  }
+
+  .floating-text span {
+    display: inline-block;
+    animation: floatTiny 3.8s ease-in-out infinite;
+  }
+
+  .floating-text span:nth-child(odd) {
+    animation-delay: 0.15s;
+  }
+
+  .floating-text span:nth-child(even) {
+    animation-delay: 0.35s;
+  }
+
+  /* ---------- Buttons & Interactions ---------- */
+  .text-btn {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--glass-border);
+    color: var(--ink);
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 35px;
+    box-shadow: 0 10px 20px rgba(150, 120, 170, 0.1);
+    transition: all 0.3s ease;
+    animation: floatTiny 6s ease-in-out infinite;
+  }
+
+  .text-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    background: #fff;
+    box-shadow: 0 15px 25px rgba(150, 120, 170, 0.2);
+  }
+
+  .btn-clicked {
+    background: var(--rose) !important;
+    color: #fff !important;
+    transform: scale(0.9) translateY(0) !important;
+    border-color: var(--rose) !important;
+    box-shadow: 0 0 20px rgba(232, 144, 159, 0.6) !important;
+  }
+
+  /* ---------- Clock Redesign ---------- */
+  .clock-intro {
+    font-family: 'Gaegu', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    animation: floatTiny 5.8s ease-in-out infinite;
+  }
+
+  .clock-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+  }
+
+  .time-box {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    padding: 15px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: floatTiny 6.2s ease-in-out infinite;
+  }
+
+  .time-box:nth-child(2) { animation-delay: 0.15s; }
+  .time-box:nth-child(3) { animation-delay: 0.3s; }
+  .time-box:nth-child(4) { animation-delay: 0.45s; }
+  .time-box:nth-child(5) { animation-delay: 0.6s; }
+  .time-box:nth-child(6) { animation-delay: 0.75s; }
+
+  .time-val {
+    font-family: 'Gaegu', cursive;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .time-label {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 6px;
+  }
+
+  #c-seconds {
+    background: linear-gradient(120deg, var(--gold), var(--rose));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Audio Element -->
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Background Petals Container -->
+  <div id="petals-container"></div>
+
+  <!-- Screen 1: Hero -->
+  <section id="screen-hero" class="active">
+    <h1 class="hero-title">Happy Friendship Day,<br><span class="highlight">Radhu</span>! 💙</h1>
+    <p class="hero-sub">Celebrating an amazing friendship.</p>
+
+    <button class="text-btn" onclick="goToNext('screen-hero', 'screen-message', this)">Continue</button>
+  </section>
+
+  <!-- Screen 2: Message -->
+  <section id="screen-message">
+    <div class="glass-card">
+      <p class="kicker">💌 A Short Message</p>
+      <p class="content floating-text">
+        <span>Thank</span> <span>you</span> <span>for</span> <span>being</span> <span>my</span>
+        <span>first</span> <span>female</span> <span>friend.</span>
+        <span>Because</span> <span>of</span> <span>you,</span>
+        <span>I</span> <span>learned</span> <span>how</span> <span>to</span> <span>talk</span>
+        <span>comfortably</span> <span>with</span> <span>girls.</span>
+        <span>These</span> <span>years</span> <span>have</span> <span>given</span> <span>me</span>
+        <span>countless</span> <span>memories,</span> <span>and</span> <span>I'm</span>
+        <span>truly</span> <span>grateful</span> <span>for</span> <span>your</span>
+        <span>friendship.</span>
+      </p>
+
+      <button class="text-btn" onclick="goToNext('screen-message', 'screen-clock', this)">Next →</button>
+    </div>
+  </section>
+
+  <!-- Screen 3: Clock -->
+  <section id="screen-clock">
+    <div class="glass-card">
+      <p class="kicker">⏳ Counting Clock</p>
+      <p class="clock-intro">We've been friends for...</p>
+
+      <div class="clock-grid">
+        <div class="time-box">
+          <span class="time-val" id="c-years">0</span>
+          <span class="time-label">Years</span>
+        </div>
+        <div class="time-box">
+          <span class="time-val" id="c-months">0</span>
+          <span class="time-label">Months</span>
+        </div>
+        <div class="time-box">
+          <span class="time-val" id="c-days">0</span>
+          <span class="time-label">Days</span>
+        </div>
+        <div class="time-box">
+          <span class="time-val" id="c-hours">00</span>
+          <span class="time-label">Hours</span>
+        </div>
+        <div class="time-box">
+          <span class="time-val" id="c-minutes">00</span>
+          <span class="time-label">Mins</span>
+        </div>
+        <div class="time-box">
+          <span class="time-val" id="c-seconds">00</span>
+          <span class="time-label">Secs</span>
+        </div>
+      </div>
+
+      <button class="text-btn" onclick="goToNext('screen-clock', 'screen-end', this)">Next →</button>
+    </div>
+  </section>
+
+  <!-- Screen 4: The End -->
+  <section id="screen-end">
+    <div class="glass-card">
+      <p class="kicker">🌼 The End</p>
+      <p class="content" style="font-weight: bold; font-size: 2.2rem;">Here's to many more Friendship Days together.<br><br>Happy Friendship Day! 💙</p>
+    </div>
+  </section>
+
+<script>
+  // ---------- Background Music Logic ----------
+  const bgMusic = document.getElementById('bg-music');
+  let musicStarted = false;
+
+  function startMusic() {
+    if (!musicStarted) {
+      bgMusic.play().then(() => {
+        musicStarted = true;
+      }).catch(err => {
+        console.log("Audio play failed or was blocked:", err);
+      });
+    }
+  }
+
+  document.body.addEventListener('click', startMusic);
+  document.body.addEventListener('touchstart', startMusic);
+
+  // ---------- Generate Multi-Colored Pastel Petals ----------
+  const petalContainer = document.getElementById('petals-container');
+  const petalCount = 25; 
+
+  const pastelColors = [
+    'linear-gradient(135deg, rgba(232, 144, 159, 0.4) 0%, rgba(255, 192, 203, 0.1) 100%)', 
+    'linear-gradient(135deg, rgba(167, 199, 231, 0.4) 0%, rgba(200, 225, 250, 0.1) 100%)', 
+    'linear-gradient(135deg, rgba(203, 195, 227, 0.4) 0%, rgba(230, 220, 250, 0.1) 100%)', 
+    'linear-gradient(135deg, rgba(175, 225, 175, 0.4) 0%, rgba(210, 250, 210, 0.1) 100%)', 
+    'linear-gradient(135deg, rgba(255, 204, 153, 0.4) 0%, rgba(255, 225, 190, 0.1) 100%)'  
+  ];
+
+  for (let i = 0; i < petalCount; i++) {
+    let petal = document.createElement('div');
+    petal.classList.add('petal');
+
+    let randomColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+    petal.style.background = randomColor;
+
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.width = (Math.random() * 14 + 10) + 'px'; 
+    petal.style.height = petal.style.width; 
+
+    let fallDuration = Math.random() * 8 + 6;
+    let swayDuration = Math.random() * 3 + 3;
+    petal.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
+
+    let fallDelay = Math.random() * 10;
+    let swayDelay = Math.random() * 5;
+    petal.style.animationDelay = `${fallDelay}s, ${swayDelay}s`;
+
+    petalContainer.appendChild(petal);
+  }
+
+  // ---------- Enhanced Page Transition Logic ----------
+  function goToNext(currentId, nextId, btnElement) {
+    btnElement.classList.add('btn-clicked');
+
+    setTimeout(() => {
+      const currentSection = document.getElementById(currentId);
+      const nextSection = document.getElementById(nextId);
+
+      currentSection.classList.remove('active');
+      currentSection.classList.add('exit');
+
+      setTimeout(() => {
+        currentSection.style.display = 'none';
+        currentSection.classList.remove('exit');
+
+        nextSection.style.display = 'flex';
+        void nextSection.offsetWidth; 
+
+        nextSection.classList.add('active');
+      }, 800); 
+    }, 250); 
+  }
+
+  // ---------- Live Friendship Counter Logic ----------
+  const startDate = new Date(2016, 3, 20, 0, 0, 0, 0); 
+
+  function pad(n) { 
+    return n.toString().padStart(2, '0'); 
+  }
+
+  function updateClock() {
+    const now = new Date();
+
+    let years = now.getFullYear() - startDate.getFullYear();
+    let months = now.getMonth() - startDate.getMonth();
+    let days = now.getDate() - startDate.getDate();
+    let hours = now.getHours() - startDate.getHours();
+    let minutes = now.getMinutes() - startDate.getMinutes();
+    let seconds = now.getSeconds() - startDate.getSeconds();
+
+    if (seconds < 0) { minutes--; seconds += 60; }
+    if (minutes < 0) { hours--; minutes += 60; }
+    if (hours < 0) { days--; hours += 24; }
+    if (days < 0) {
+      months--;
+      const prevMonthDate = new Date(now.getFullYear(), now.getMonth(), 0);
+      days += prevMonthDate.getDate();
+    }
+    if (months < 0) { years--; months += 12; }
+
+    document.getElementById('c-years').textContent = years;
+    document.getElementById('c-months').textContent = months;
+    document.getElementById('c-days').textContent = days;
+    document.getElementById('c-hours').textContent = pad(hours);
+    document.getElementById('c-minutes').textContent = pad(minutes);
+    document.getElementById('c-seconds').textContent = pad(seconds);
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
+</body>
+</html>
